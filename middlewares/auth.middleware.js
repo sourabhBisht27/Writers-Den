@@ -4,7 +4,7 @@ const asyncHandler = require("../utils/asyncHandler");
 const jwt = require("jsonwebtoken");
 
 // user next whenever writing middlewares
-export const verifyJWT = asyncHandler(async (req, _, next) => {
+const verifyJWT = asyncHandler(async (req, _, next) => {
   try {
     // gathering token
     const token =
@@ -33,3 +33,5 @@ export const verifyJWT = asyncHandler(async (req, _, next) => {
     throw new ApiError(401, err?.message || "Invalid Access Token");
   }
 });
+
+module.exports = { verifyJWT };

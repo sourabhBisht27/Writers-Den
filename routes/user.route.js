@@ -8,6 +8,7 @@ const {
 } = require("../controllers/user.controller");
 const { verifyJWT } = require("../middlewares/auth.middleware");
 
+// console.log(registerUser, loginUser, verifyJWT);
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 

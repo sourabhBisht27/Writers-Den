@@ -1,0 +1,18 @@
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0 auto;
+  padding: 6px 10px;
+  color: #322c2b;
+  background-color: #eef7ff;
+}
+
+input {
+  display: flex;
+  padding: 10px;
+  margin: 0 auto;
+}

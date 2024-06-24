@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const blogRoutes = require("./routes/blog.route");
 const userRoutes = require("./routes/user.route");
@@ -15,6 +16,12 @@ mongoose
     console.log("Error connecting to DB", error);
   });
 
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
