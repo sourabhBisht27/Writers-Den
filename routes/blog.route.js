@@ -12,7 +12,7 @@ const {
 router.get("/blogs", getAllBlogs);
 router.get("/blogs/:blogId", getBlogById);
 router.post("/blogs", createBlog);
-router.put("./blogs/:blogId", updateBlog);
-router.delete("./blogs/:blogId", deleteBlog);
+router.put("/blogs/:blogId", updateBlog);
+router.delete("/blogs/:blogId", deleteBlog);
 
 module.exports = router;

@@ -1,0 +1,42 @@
+.blog {
+  padding: 1em;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog h2 {
+  margin-top: 0;
+}
+
+.blog p {
+  margin-bottom: 0;
+}
+
+.blog-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.blog-icon {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.blog-icon:hover {
+  color: #000;
+}
+
+.blog:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}

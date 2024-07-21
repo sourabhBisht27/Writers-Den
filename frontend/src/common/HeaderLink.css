@@ -1,0 +1,25 @@
+li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.nav-items:hover,
+.nav-items:hover svg {
+  color: #150404;
+  fill: #150404;
+}
+
+@media (max-width: 768px) {
+  .nav-items {
+    width: 100%;
+  }
+}

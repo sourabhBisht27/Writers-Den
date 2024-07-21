@@ -1,8 +1,44 @@
-* {
-  margin: 0;
+:root {
+  --bg-color: #fff6e9;
+  /* for headers and footers */
+  --secondary-bg-color: #373a40;
+  /* for text of headers and footers */
+  --secondary-color: #686d76;
+  /* for text of main section */
+  --primary-color: #3d3b40;
+  /*  headings maybe*/
+  --heading: #61677a;
+}
+
+*,
+*::before,
+*::after {
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  background-color: #151515;
-  font-family: sans-serif;
   scroll-behavior: smooth;
+  background-color: #f5f7f8;
+  color: #686d76;
+}
+/* f8edff FFF6F6 */
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }

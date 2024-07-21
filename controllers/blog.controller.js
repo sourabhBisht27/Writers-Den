@@ -1,10 +1,10 @@
 const Blog = require("../models/blog.model");
 
-exports.getAllBlogs = async (req, res) => {
+exports.getAllBlogs = async (_, res) => {
   try {
     const blogs = await Blog.find();
     res.json(blogs);
-    // console.log(blogs); 
+    // console.log(blogs);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -22,6 +22,7 @@ exports.getBlogById = async (req, res) => {
 
 exports.createBlog = async (req, res) => {
   const blog = new Blog(req.body);
+  // console.log(blog);
   try {
     const newBlog = await blog.save();
     res.status(201).json(newBlog);
@@ -32,18 +33,34 @@ exports.createBlog = async (req, res) => {
 
 exports.updateBlog = async (req, res) => {
   try {
-    const uodatedBlog = await Blog.updateById(req.params.id, req.body, {
-      new: true,
-    });
-    res.json(uodatedBlog);
+    // console.log(
+    //   "Error editing blog! AxiosError: Request failed with status code 404 : ",
+    //   req.params.blogId
+    // );
+    // console.log("Update data : ", req.body);
+
+    const updatedBlog = await Blog.findByIdAndUpdate(
+      req.params.blogId,
+      req.body,
+      {
+        new: true,
+      }
+    );
+
+    if (!updatedBlog) {
+      return res.status(404).json({ message: "Blog not found!" });
+    }
+
+    res.json(updatedBlog);
   } catch (err) {
+    console.log("error updating blog", err);
     res.status(400).json({ message: err.message });
   }
 };
 
 exports.deleteBlog = async (req, res) => {
   try {
-    await Blog.findByIdAndDeleted(req.params.id);
+    await Blog.findByIdAndDelete(req.params.blogId);
     res.json({ message: "Blog deleted!" });
   } catch (err) {
     res.status(500).json({ message: err.message });

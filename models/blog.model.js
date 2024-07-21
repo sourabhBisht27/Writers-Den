@@ -14,7 +14,7 @@ const blogSchema = new Schema(
     author: {
       type: Types.ObjectId,
       ref: "User",
-      required: true,
+      // required: true,
     },
     keyTerms: {
       type: [String],

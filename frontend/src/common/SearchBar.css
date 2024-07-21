@@ -1,0 +1,13 @@
+.search-bar {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

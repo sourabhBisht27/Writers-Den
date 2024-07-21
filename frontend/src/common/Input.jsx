@@ -1,7 +1,13 @@
-import "../styles/Input.css";
+import "./Input.css";
 
 const Input = ({ ...input }) => {
-  return <input {...input} />;
+  // console.log("Input : ", input);
+  return (
+    <input
+      className="input"
+      {...input}
+    />
+  );
 };
 
 export default Input;
