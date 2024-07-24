@@ -5,7 +5,7 @@ const BlogList = ({ blogs, deleteBlog }) => {
   return (
     <div className="blogs">
       {blogs && blogs.length > 0 ? (
-        blogs.map((blog, index) => (
+        blogs.map((blog) => (
           <BlogItem
             key={blog._id}
             blog={blog}
@@ -13,7 +13,7 @@ const BlogList = ({ blogs, deleteBlog }) => {
           />
         ))
       ) : (
-        <p>Error loading blogs</p>
+        <p>No blogs found!</p>
       )}
     </div>
   );

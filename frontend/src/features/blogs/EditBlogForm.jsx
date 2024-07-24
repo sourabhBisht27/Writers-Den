@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function EditBlogForm({ blogs, editBlog }) {
   const { blogId } = useParams();
+  console.log(blogId);
   const [initialFormData, setInitialFormData] = useState({
     title: "",
     description: "",
@@ -25,11 +26,13 @@ function EditBlogForm({ blogs, editBlog }) {
     navigate("/");
   };
   return (
-    <BlogForm
-      initialFormData={initialFormData}
-      onSubmit={handleEditBlog}
-      submitButtonText="Update"
-    />
+    <>
+      <BlogForm
+        initialFormData={initialFormData}
+        onSubmit={handleEditBlog}
+        submitButtonText="Update"
+      />
+    </>
   );
 }
 

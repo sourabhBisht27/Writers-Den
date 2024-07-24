@@ -4,6 +4,7 @@ import "../blogs/CreateBlogForm.css";
 
 function CreateBlogForm({ addBlog }) {
   const handleCreateBlog = (formData) => {
+    // console.log(formData);
     addBlog(formData);
   };
 

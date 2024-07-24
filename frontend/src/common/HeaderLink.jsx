@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./HeaderLink.css";
 
-const HeaderLink = ({ to, label, Icon }) => {
+const HeaderLink = ({ to, label = "", Icon }) => {
   return (
     <li>
       <NavLink

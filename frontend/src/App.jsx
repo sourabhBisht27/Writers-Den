@@ -8,6 +8,7 @@ import EditBlogForm from "./features/blogs/EditBlogForm";
 
 function App() {
   const [blogs, setBlogs] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     instance
@@ -21,6 +22,7 @@ function App() {
       });
   }, []);
 
+  // (1)Add
   const addBlog = (newBlog) => {
     // console.log("Adding blog : ", newBlog);
     instance
@@ -34,6 +36,7 @@ function App() {
       });
   };
 
+  // (2)Edit
   const editBlog = (blogId, updateBlog) => {
     // console.log("Updating blog with ID: ", blogId, "Data: ", updateBlog);
 
@@ -56,6 +59,7 @@ function App() {
       });
   };
 
+  // (3)Delete
   const deleteBlog = (blogId) => {
     instance
       .delete(`/api/v1/blogs/${blogId}`)
@@ -69,6 +73,17 @@ function App() {
       });
   };
 
+  // (4)Search
+  const handleSearch = (query) => {
+    setSearchQuery(query.toLowerCase());
+  };
+
+  const filteredBlogs = blogs.filter(
+    (blog) =>
+      blog.title.toLowerCase().includes(searchQuery) ||
+      blog.description.toLowerCase().includes(searchQuery)
+  );
+
   return (
     <Router>
       <Routes>
@@ -76,8 +91,9 @@ function App() {
           path="/"
           element={
             <LandingPage
-              blogs={blogs}
+              blogs={filteredBlogs}
               deleteBlog={deleteBlog}
+              handleSearch={handleSearch}
             />
           }
         />

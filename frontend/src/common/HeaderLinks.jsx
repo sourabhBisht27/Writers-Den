@@ -10,13 +10,14 @@ const HeaderLinks = () => {
     // might change to /blogs
     { label: "Write", to: "/write", Icon: PiNotePencilFill },
     { label: "Notification", to: "/notification", Icon: IoNotifications },
-    { label: "Dropdown", to: "/dropdown", Icon: RxAvatar },
+    { to: "/dropdown", Icon: RxAvatar },
   ];
+  let count = 0;
   return (
     <ul>
       {headerLinks.map((headerLink) => (
         <HeaderLink
-          key={headerLink.label}
+          key={headerLink.label || count++}
           label={headerLink.label}
           to={headerLink.to}
           Icon={headerLink.Icon}

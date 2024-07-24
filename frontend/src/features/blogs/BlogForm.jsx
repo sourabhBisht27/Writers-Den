@@ -48,32 +48,49 @@ function BlogForm({ initialFormData, onSubmit, submitButtonText }) {
   };
 
   return (
-    <form
-      className="form"
-      name="blogForm"
-      onSubmit={handleSubmit}
-    >
-      {errors.title && <p className="error">{errors.title}</p>}
-      <Input
-        type="text"
-        name="title"
-        placeholder="Title"
-        value={form.title}
-        onChange={handleChange}
-      />
-      {errors.description && <p className="error">{errors.description}</p>}
-      <TextArea
-        name="description"
-        placeholder="Description"
-        value={form.description}
-        onChange={handleChange}
-      />
-      <br />
-      <Button
-        type="submit"
-        btnText={submitButtonText}
-      />
-    </form>
+    <>
+      <h1>Writers Den</h1>
+      <form
+        className="form"
+        name="blogForm"
+        onSubmit={handleSubmit}
+      >
+        {errors.title && (
+          <p
+            style={{ color: "#EE4E4E" }}
+            className="error"
+          >
+            {errors.title}
+          </p>
+        )}
+        <Input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={form.title}
+          onChange={handleChange}
+        />
+        {errors.description && (
+          <p
+            style={{ color: "#EE4E4E" }}
+            className="error"
+          >
+            {errors.description}
+          </p>
+        )}
+        <TextArea
+          name="description"
+          placeholder="Description"
+          value={form.description}
+          onChange={handleChange}
+        />
+        <br />
+        <Button
+          type="submit"
+          btnText={submitButtonText}
+        />
+      </form>
+    </>
   );
 }
 
